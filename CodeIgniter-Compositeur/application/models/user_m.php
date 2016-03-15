@@ -17,7 +17,7 @@ Class User_m extends CI_Model
 			$this->details = $login[0];
 			// Call set_session to set the user's session vars via CodeIgniter
 			$this->set_session();
-			return true;
+			return $login;
 		}
 	
 		return false;

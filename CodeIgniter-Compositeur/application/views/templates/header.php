@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title><?php echo $title ?> - CodeIgniter 2 Tutorial</title>
+	<title>Lab 5</title>
 		<script type="text/javascript">
 
 		  var _gaq = _gaq || [];
@@ -31,7 +31,12 @@
 			s.parentNode.insertBefore(ga, s);
 		})();
 
-		</script></head>
+		</script>
+<style>
+h1 {background-color:orange;
+	color: white;}
+</style></head>
 <body>
-	<h1>CodeIgniter 2 Tutorial</h1>
+	<h1>Laboratoire 5- H2016</h1>
+	
 
