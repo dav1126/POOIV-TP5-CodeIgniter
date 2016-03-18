@@ -14,18 +14,23 @@ class VerifyAjout extends CI_Controller {
 
 		$this->form_validation->set_rules('nom', 'Nom', 'trim|required');
 		$this->form_validation->set_rules('prenom', 'Prenom', 'trim|required');
-		$this->form_validation->set_rules('age', 'Age', 'trim|required'|'is_natural_no_zero|less_than[126]|greater_than[0]');
+		$this->form_validation->set_rules('age', 'Age', 'trim|required');
 		$this->form_validation->set_rules('adresse', 'Adresse', 'trim|required');
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|callback_check_database');
-
 		if($this->form_validation->run() == FALSE)
 		{
 			//Field validation failed.  User redirected to ajout page
-			$this->load->templateLoggedIn('ajouter_view');
+			$villes['listeVilles'] = $this->request_db_clients->getAllVilles();
+			$data['villes'] = $villes;
+			$this->load->templateLoggedIn('ajouter_view', $data);
 		}
 		else
 		{
-			$this->load->templateLoggedIn('ajout_confirm_view');
+			$success = $this->request_db_clients->add_client_to_db($_POST);
+			if ($success)
+				$this->load->templateLoggedIn('ajout_confirm_view');
+			else
+				echo "Erreur de base de données";
 		}
 
 	}

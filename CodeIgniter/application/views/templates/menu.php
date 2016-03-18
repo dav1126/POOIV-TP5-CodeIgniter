@@ -8,17 +8,17 @@ div {background-color:orange;
 <inline>
 	<div>
 		<?php
-		echo anchor('ajouter', 'Ajouter un client');
+		echo anchor('home/ajouter', 'Ajouter un client');
 		?>
 	</div>
 	<div>
 		<?php
-		echo anchor('modifier', 'Modifier un client');
+		echo anchor('home/modifier', 'Modifier un client');
 		?>
 	</div>
 	<div>
 		<?php
-		echo anchor('consulter', 'Consulter des produits');
+		echo anchor('home/consulter', 'Consulter des produits');
 		?>
 	</div>	
 <inline>
